@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo activado -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#4CAF50" /> <!-- Color verde -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <!-- Fondo desactivado -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#D3D3D3" /> <!-- Color gris -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</selector>

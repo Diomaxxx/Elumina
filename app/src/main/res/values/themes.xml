@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Elumina" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="background_color">@color/background_color_claro</item>
+        <item name="layout_color">@color/layout_color_claro</item>
+        <item name="text_color">@color/text_color_claro</item>
+        <item name="icon_color">@color/icon_color_claro</item>
+    </style>
+
+    <style name="Theme.Elumina" parent="Base.Theme.Elumina" />
+</resources>

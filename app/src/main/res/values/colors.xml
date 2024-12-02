@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green_active">#4CAF50</color>
+    <color name="gray_inactive">#D3D3D3</color>
+    <color name="purple_500">#7EFF0A</color>
+    <color name="purple_700">#FF0049</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="gray">#D3D3D3</color>
+    <color name="green">#4CAF50</color>
+    <color name="rojo_claro">#73DE2424</color>
+    <color name="rojo_fuerte">#AF1A1A</color>
+
+
+
+    <color name="celeste_claro">#0D6EFD</color>
+    <color name="Azul_oscuro">#001d4a</color>
+    <color name="azul_crema">#27476e</color>
+    <color name="celeste">#006992</color>
+    <color name="amarillo">#edd500</color>
+    <color name="naranja">#eca400</color>
+    <color name="blanco">#f6f5ff</color>
+
+
+
+    <color name="background_color_claro">#E4E9F7</color> <!-- Fondo claro -->
+    <color name="layout_color_claro">#F0F0F0</color> <!-- Color de layouts claros -->
+    <color name="text_color_claro">#0D6EFD</color> <!-- Color de texto oscuro -->
+
+    <color name="background_color_oscuro">#121212</color> <!-- Fondo oscuro -->
+    <color name="layout_color_oscuro">#1E1E1E</color> <!-- Color de layouts oscuros -->
+    <color name="text_color_oscuro">#FFFFFF</color> <!-- Color de texto claro -->
+
+    <color name="icon_color_claro">#000000</color> <!-- Negro para modo claro -->
+    <color name="icon_color_oscuro">#FFFFFF</color> <!-- Blanco para modo oscuro -->
+</resources>
