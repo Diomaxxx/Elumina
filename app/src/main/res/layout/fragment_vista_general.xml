@@ -55,7 +55,7 @@
                             android:src="@drawable/panel_solar" />
 
                         <TextView
-                            android:id="@+id/tvSolarValue"
+                            android:id="@+id/tvGeneracionActual"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -81,7 +81,7 @@
                             android:src="@drawable/electrico" />
 
                         <TextView
-                            android:id="@+id/tvGridValue"
+                            android:id="@+id/tvConsumoRedActual"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -107,7 +107,7 @@
                             android:src="@drawable/casa_panel" />
 
                         <TextView
-                            android:id="@+id/tvHouseValue"
+                            android:id="@+id/tvConsumoTotalActual"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -167,7 +167,7 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/tvDeficitActual"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-13 67"
@@ -212,9 +212,9 @@
                             android:id="@+id/textView1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Deficit fotovoltaico"
-                            android:textStyle="bold"
+                            android:text="Cuota autarquica"
                             android:textColor="@color/azul_crema"
+                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -223,7 +223,7 @@
                             app:layout_constraintVertical_bias="0.0" />
 
                         <TextView
-                            android:id="@+id/secambia"
+                            android:id="@+id/tvCuotaAutarquicaActual"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-13 67"
@@ -257,9 +257,9 @@
                             android:id="@+id/textView11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Otro tema"
-                            android:textStyle="bold"
+                            android:text="Autoconsumo"
                             android:textColor="@color/azul_crema"
+                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -268,7 +268,7 @@
                             app:layout_constraintVertical_bias="0.0" />
 
                         <TextView
-                            android:id="@+id/textView33"
+                            android:id="@+id/tvAutoConsumoActual"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Valor: 25"
