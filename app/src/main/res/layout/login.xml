@@ -80,7 +80,7 @@
                 android:src="@drawable/usuario" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/editemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -117,7 +117,7 @@
                 android:src="@drawable/candado" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/editpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
