@@ -13,8 +13,12 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.elumina.Graphql.Models.Entity.Cliente;
 import com.example.elumina.Graphql.Models.Entity.Rendimiento;
+import com.example.elumina.Graphql.Models.Entity.Sistema;
+import com.example.elumina.Graphql.Repositories.ClienteRepository;
 import com.example.elumina.Graphql.Repositories.RendimientoRepository;
+import com.example.elumina.Graphql.Repositories.SistemaRepository;
 import com.example.elumina.Graphql.Service.GraphQLCallback;
 import com.example.elumina.R;
 
@@ -29,6 +33,10 @@ public class VistaGeneralFragment extends Fragment {
     private ScheduledExecutorService scheduler;
     private Handler handler;
     private RendimientoRepository rendimientoRepository;
+    private ClienteRepository clienteRepository;
+    private SistemaRepository sistemaRepository;
+    private String token;
+
 
     public VistaGeneralFragment() {
     }
@@ -47,12 +55,62 @@ public class VistaGeneralFragment extends Fragment {
 
         handler = new Handler(Looper.getMainLooper());
         scheduler = Executors.newScheduledThreadPool(1);
-        rendimientoRepository = new RendimientoRepository();
 
-        startPeriodicUpdates();
+        rendimientoRepository = new RendimientoRepository();
+        clienteRepository = new ClienteRepository();
+        sistemaRepository = new SistemaRepository();
+
+
+        token = getContext().getSharedPreferences( "user_prefs", MODE_PRIVATE).getString("token", null);
+
+
+        getData();
 
         return view;
     }
+
+    private void getData() {
+
+        clienteRepository.obtenerClienteDesdeToken(token, new GraphQLCallback<Cliente>() {
+            @Override
+            public void onSuccess(Cliente cliente) {
+
+                Log.d("Cliente", "Cliente recibido: " + cliente.getId());
+                getSistema(cliente.getId());
+
+
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                Log.e("ErrorCliente", "Error al obtener cliente: " + errorMessage);
+            }
+        });
+    }
+    public void getSistema(String clienteId) {
+        Log.d("Sistema", "Cliente ID: " + clienteId);
+
+        sistemaRepository.getSistemaByClienteId(clienteId, token, new GraphQLCallback<Sistema>() {
+            @Override
+            public void onSuccess(Sistema sistema) {
+                Log.d("Sistema", "Sistema recibido: " + sistema.getNombrePlanta());
+                getContext().getSharedPreferences("user_prefs", MODE_PRIVATE)
+                        .edit()
+                        .putString("sistemaId", sistema.getId())
+                        .apply();
+                startPeriodicUpdates();
+
+
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                // Si hubo un error al obtener el sistema, manejarlo aquí
+                Log.e("ErrorSistema", "Error al obtener sistema: " + errorMessage);
+            }
+        });
+    }
+
 
     @Override
     public void onDestroyView() {
@@ -74,8 +132,7 @@ public class VistaGeneralFragment extends Fragment {
 
     private void performGraphQLQuery() {
 
-        String token = getContext().getSharedPreferences( "user_prefs", MODE_PRIVATE).getString("token", null);
-        String sistemaId = "673c681a7962b03b0cae5414";
+        String sistemaId = getContext().getSharedPreferences( "user_prefs", MODE_PRIVATE).getString("sistemaId", null);
 
         if (token != null) {
             RendimientoRepository rendimientoRepository = new RendimientoRepository();
