@@ -12,39 +12,31 @@ import java.util.ArrayList;
 
 public class ConfiguracionGrafica {
 
+    public static void configurar(LineChart lineChart,
+                                  ArrayList<Entry> generationEntries,
+                                  ArrayList<Entry> consumptionEntries,
+                                  ArrayList<Entry> gridEntries) {
 
-    public static void configurar(LineChart lineChart) {
-        // Crear datos de ejemplo
-        ArrayList<Entry> generationEntries = new ArrayList<>();
-        ArrayList<Entry> consumptionEntries = new ArrayList<>();
-        ArrayList<Entry> gridEntries = new ArrayList<>();
-
-        for (int i = 0; i <= 24; i++) {
-            generationEntries.add(new Entry(i, (float) (Math.random() * 15 + 5))); // Generación
-            consumptionEntries.add(new Entry(i, (float) (Math.random() * 10 + 20))); // Consumo
-            gridEntries.add(new Entry(i, (float) (Math.random() * 5 + 10))); // Consumo de la red
-        }
-
-        // Configurar conjuntos de datos
+        // Configurar conjuntos de datos con los datos pasados
         LineDataSet generationDataSet = new LineDataSet(generationEntries, "Generación");
         generationDataSet.setColor(Color.GREEN);
         generationDataSet.setFillColor(Color.GREEN);
         generationDataSet.setDrawFilled(true);
         generationDataSet.setLineWidth(2f);
 
-        LineDataSet consumptionDataSet = new LineDataSet(consumptionEntries, "Consumo");
+        LineDataSet consumptionDataSet = new LineDataSet(consumptionEntries, "Consumo Total");
         consumptionDataSet.setColor(Color.GRAY);
         consumptionDataSet.setFillColor(Color.LTGRAY);
         consumptionDataSet.setDrawFilled(true);
         consumptionDataSet.setLineWidth(2f);
 
-        LineDataSet gridDataSet = new LineDataSet(gridEntries, "Consumo de la red");
+        LineDataSet gridDataSet = new LineDataSet(gridEntries, "Consumo de la Red");
         gridDataSet.setColor(Color.RED);
         gridDataSet.setFillColor(Color.RED);
         gridDataSet.setDrawFilled(true);
         gridDataSet.setLineWidth(2f);
 
-        // Agregar conjuntos de datos a la gráfica
+        // Agregar los conjuntos de datos a la gráfica
         LineData lineData = new LineData(generationDataSet, consumptionDataSet, gridDataSet);
         lineChart.setData(lineData);
 
@@ -63,3 +55,4 @@ public class ConfiguracionGrafica {
         lineChart.invalidate();
     }
 }
+

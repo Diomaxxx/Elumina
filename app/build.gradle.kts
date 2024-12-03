@@ -50,5 +50,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation ("org.json:json:20210307")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
 
 }
