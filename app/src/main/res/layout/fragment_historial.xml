@@ -65,8 +65,8 @@
             <!-- Gráfica de Líneas Apiladas -->
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart"
-                android:layout_width="377dp"
-                android:layout_height="232dp"
+                android:layout_width="367dp"
+                android:layout_height="229dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp" />
 
@@ -165,53 +165,116 @@
                     android:paddingVertical="15dp"
                     android:paddingBottom="8dp">
 
-                <!-- Generación Total -->
-                <LinearLayout
+                    <!-- Generación Total -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/border_drawable"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="15dp"
+                        android:paddingBottom="8dp">
+
+                        <!-- Título y datos en columna -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="Generación promedio"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvGeneracionTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="993,6 kWh"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Imagen permanece en su lugar -->
+                        <ImageView
+                            android:layout_width="148dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="16dp"
+                            android:src="@drawable/panel_solar" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@drawable/border_drawable"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
                     android:paddingVertical="15dp"
                     android:paddingBottom="8dp">
 
-                    <!-- Título y datos en columna -->
+                    <!-- Consumo Total -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/border_drawable"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="5dp"
+                        android:paddingBottom="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <!-- Título y datos en columna -->
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="Generación total"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="Consumo promedio"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="993,6 kWh"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvConsumoTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="3173,6 kWh"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Imagen permanece en su lugar -->
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="16dp"
+                            android:src="@drawable/casa_panel" />
                     </LinearLayout>
 
-                    <!-- Imagen permanece en su lugar -->
-                    <ImageView
-                        android:layout_width="148dp"
-                        android:layout_height="70dp"
-                        android:layout_marginStart="16dp"
-                        android:src="@drawable/panel_solar" />
-                </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
 
@@ -226,114 +289,55 @@
                     android:paddingVertical="15dp"
                     android:paddingBottom="8dp">
 
-                <!-- Consumo Total -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@drawable/border_drawable"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingVertical="5dp"
-                    android:paddingBottom="8dp">
 
-                    <!-- Título y datos en columna -->
+                    <!-- Cuota Autárquica -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="Consumo total"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="3173,6 kWh"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <!-- Imagen permanece en su lugar -->
-                    <ImageView
-                        android:layout_width="160dp"
-                        android:layout_height="100dp"
                         android:layout_marginStart="16dp"
-                        android:src="@drawable/casa_panel" />
-                </LinearLayout>
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/border_drawable"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingVertical="15dp"
+                        android:paddingBottom="8dp">
 
-                </androidx.cardview.widget.CardView>
+                        <!-- Título -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:paddingStart="10dp"
+                            android:textStyle="bold"
+                            android:text="Cuota autárquica promedio"
+                            android:textColor="@color/azul_crema"
+                            android:textSize="18sp" />
 
+                        <!-- Porcentaje -->
+                        <TextView
+                            android:id="@+id/tvCuotaAutarquica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:paddingStart="10dp"
+                            android:text="31 %"
+                            android:textColor="?attr/text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="5dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:paddingVertical="15dp"
-                    android:paddingBottom="8dp">
-
-
-                <!-- Cuota Autárquica -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/border_drawable"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingVertical="15dp"
-                    android:paddingBottom="8dp">
-
-                    <!-- Título -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:paddingStart="10dp"
-                        android:textStyle="bold"
-                        android:text="Cuota autárquica"
-                        android:textColor="@color/azul_crema"
-                        android:textSize="18sp" />
-
-                    <!-- Porcentaje -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:paddingStart="10dp"
-                        android:text="31 %"
-                        android:textColor="?attr/text_color"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <!-- Barra de Progreso -->
-                    <ProgressBar
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:layout_marginBottom="16dp"
-                        android:backgroundTint="#E0E0E0"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:progress="31"
-                        android:progressTint="#4CAF50" />
-                </LinearLayout>
+                        <!-- Barra de Progreso -->
+                        <ProgressBar
+                            android:id="@+id/pbCuotaAutarquica"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:backgroundTint="#E0E0E0"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:progress="31"
+                            android:progressTint="#4CAF50" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -347,196 +351,195 @@
                     android:paddingVertical="15dp"
                     android:paddingBottom="8dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/border_drawable"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <!-- Consumo Directo -->
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="16dp">
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/border_drawable"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
-                        <TextView
-                            android:id="@+id/tvConsumoDirecto"
-                            android:layout_width="0dp"
+                        <!-- Consumo Directo -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Consumo directo"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toStartOf="@id/tvCuotaConsumoDirecto"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:paddingBottom="16dp">
 
-                        <TextView
-                            android:id="@+id/tvValorConsumoDirecto"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:id="@+id/tvConsumoDirecto"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Consumo directo"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/tvCuotaConsumoDirecto"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValorConsumoDirecto"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="993,6 kWh"
+                                android:textStyle="bold"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                app:layout_constraintEnd_toStartOf="@id/tvCuotaValorConsumoDirecto"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvConsumoDirecto" />
+
+                            <TextView
+                                android:id="@+id/tvCuotaConsumoDirecto"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Cuota consumo directo"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvConsumoDirecto"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvCuotaValorConsumoDirecto"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="100 %"
+                                android:textStyle="bold"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvValorConsumoDirecto"
+                                app:layout_constraintTop_toBottomOf="@id/tvCuotaConsumoDirecto" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- Línea divisoria -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#565656" />
+
+                        <!-- Autoconsumo -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="993,6 kWh"
-                            android:textStyle="bold"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            app:layout_constraintEnd_toStartOf="@id/tvCuotaValorConsumoDirecto"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvConsumoDirecto" />
+                            android:paddingBottom="16dp">
 
-                        <TextView
-                            android:id="@+id/tvCuotaConsumoDirecto"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:id="@+id/tvAutoconsumo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Autoconsumo"
+                                android:textStyle="bold"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/tvCuotaAutoconsumo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvValorAutoconsumo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="993,6 kWh"
+                                android:textStyle="bold"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                app:layout_constraintEnd_toStartOf="@id/tvCuotaValorAutoconsumo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvAutoconsumo" />
+
+                            <TextView
+                                android:id="@+id/tvCuotaAutoconsumo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Cuota de autoconsumo"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvAutoconsumo"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvCuotaValorAutoconsumo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="100 %"
+                                android:textStyle="bold"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvValorAutoconsumo"
+                                app:layout_constraintTop_toBottomOf="@id/tvCuotaAutoconsumo" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- Línea divisoria -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#565656" />
+
+                        <!-- Consumo de la Red -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/barra3"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Cuota consumo directo"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
+                            android:paddingBottom="16dp">
 
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvConsumoDirecto"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/tvConsumoRed"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Consumo de red"
+                                android:textStyle="bold"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/tvInyeccionRed"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/tvCuotaValorConsumoDirecto"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="100 %"
-                            android:textStyle="bold"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvValorConsumoDirecto"
-                            app:layout_constraintTop_toBottomOf="@id/tvCuotaConsumoDirecto" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/tvValorConsumoRed"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="2180,0 kWh"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/tvInyeccionValorRed"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvConsumoRed" />
 
-                    <!-- Línea divisoria -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#565656" />
+                            <TextView
+                                android:id="@+id/tvInyeccionRed"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Inyección a red"
+                                android:textStyle="bold"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvConsumoRed"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                    <!-- Autoconsumo -->
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="16dp">
-
-                        <TextView
-                            android:id="@+id/tvAutoconsumo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Autoconsumo"
-                            android:textStyle="bold"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toStartOf="@id/tvCuotaAutoconsumo"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tvValorAutoconsumo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="993,6 kWh"
-                            android:textStyle="bold"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            app:layout_constraintEnd_toStartOf="@id/tvCuotaValorAutoconsumo"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvAutoconsumo" />
-
-                        <TextView
-                            android:id="@+id/tvCuotaAutoconsumo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Cuota de autoconsumo"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvAutoconsumo"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tvCuotaValorAutoconsumo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="100 %"
-                            android:textStyle="bold"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvValorAutoconsumo"
-                            app:layout_constraintTop_toBottomOf="@id/tvCuotaAutoconsumo" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <!-- Línea divisoria -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#565656" />
-
-                    <!-- Consumo de la Red -->
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/barra3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="16dp">
-
-                        <TextView
-                            android:id="@+id/tvConsumoRed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Consumo de red"
-                            android:textStyle="bold"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toStartOf="@id/tvInyeccionRed"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tvValorConsumoRed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="2180,0 kWh"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toStartOf="@id/tvInyeccionValorRed"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvConsumoRed" />
-
-                        <TextView
-                            android:id="@+id/tvInyeccionRed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Inyección a red"
-                            android:textStyle="bold"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvConsumoRed"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tvInyeccionValorRed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="0,0 kWh"
-                            android:textStyle="bold"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/tvValorConsumoRed"
-                            app:layout_constraintTop_toBottomOf="@id/tvInyeccionRed" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
+                            <TextView
+                                android:id="@+id/tvInyeccionValorRed"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0,0 kWh"
+                                android:textStyle="bold"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvValorConsumoRed"
+                                app:layout_constraintTop_toBottomOf="@id/tvInyeccionRed" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
@@ -566,54 +569,55 @@
                     android:paddingVertical="15dp"
                     android:paddingBottom="8dp">
 
-                <!-- Generación Total -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="1dp"
-                    android:background="@drawable/border_drawable"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingVertical="15dp"
-                    android:paddingBottom="8dp">
-
-
-
-                    <!-- Título y datos en columna -->
+                    <!-- Generación Total -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="Prevencion de CO2"
-                            android:textColor="@color/azul_crema"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingStart="10dp"
-                            android:text="993,6 Kg"
-                            android:textColor="?attr/text_color"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <!-- Imagen permanece en su lugar -->
-                    <ImageView
-                        android:layout_width="148dp"
-                        android:layout_height="70dp"
                         android:layout_marginStart="16dp"
-                        android:src="@drawable/panel_solar" />
-                </LinearLayout>
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="1dp"
+                        android:background="@drawable/border_drawable"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="15dp"
+                        android:paddingBottom="8dp">
+
+
+
+                        <!-- Título y datos en columna -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="Prevencion de CO2"
+                                android:textColor="@color/azul_crema"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvValorPrevencion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:text="993,6 Kg"
+                                android:textColor="?attr/text_color"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Imagen permanece en su lugar -->
+                        <ImageView
+                            android:layout_width="148dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="16dp"
+                            android:src="@drawable/panel_solar" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
